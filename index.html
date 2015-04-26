@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Survival Predictor</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Survival Predictor">
+  <meta name="author" content="Vikas Nelamangala">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Survival Predictor</h1>
+    <h2>Course Project - Developing Data Products</h2>
+    <p>Vikas Nelamangala<br/></p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>Agenda</h2>
+  </hgroup>
+  <article data-timings="">
+    <ol>
+<li>About this app - Survival Predictor</li>
+<li>About Kaggle Titanic Challenge</li>
+<li>Usage</li>
+<li>Code for plots</li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>About this app - Survival Predictor</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>This app lets you predict who survives!</p>
+
+<p>This App was developed as part of Coursera Developing Data Products Course Project.This is a very simple app making use of simple concepts of Exploratory Data Analysis on the Training set of the Kaggles Titanic Challenge Dataset. </p>
+
+<p>Github Link to App :  </p>
+
+<p>Deployed at : <a href="http://vikasnp.shinyapps.io/survivalPredictor">http://vikasnp.shinyapps.io/survivalPredictor</a></p>
+
+<h2>About Kaggle Titanic Challenge</h2>
+
+<p>The sinking of the RMS Titanic is one of the most infamous shipwrecks in history. On April 15, 1912, during her maiden voyage, the Titanic sank after colliding with an iceberg, killing 1502 out of 2224 passengers and crew. This sensational tragedy shocked the international community and led to better safety regulations for ships.
+One of the reasons that the shipwreck led to such loss of life was that there were not enough lifeboats for the passengers and crew. Although there was some element of luck involved in surviving the sinking, some groups of people were more likely to survive than others, such as women, children, and the upper-class.</p>
+
+<p>So analysing what sorts of people are likely to survive becomes important</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Usage</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>This App has a side panel in which you can change various parameters and set some parameters to each axis.</p>
+
+<p>The Main Body of the App shows plots for the parameters selected in Side Panel.</p>
+
+<p>The app also lets the user to experiment with the chosen data directly.</p>
+
+<p>This app uses data set from Kaggles Titanic Challenge found here : <a href="https://www.kaggle.com/c/titanic/download/train.csv">https://www.kaggle.com/c/titanic/download/train.csv</a> </p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Code for plots</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>ggplot 2 Library was used for the plotting. Code snippet for a graph sample:</p>
+
+<pre><code class="r">library(ggplot2)
+trainData &lt;- read.csv(url(&quot;http://s3-eu-west-1.amazonaws.com/dpadata/dataScience/train.csv&quot;))
+g &lt;- ggplot(trainData, aes(Age, Pclass))
+g + geom_point(aes(color=Sex)) + facet_grid(Survived ~.)
+</code></pre>
+
+<p><img src="assets/fig/unnamed-chunk-1-1.png" alt="plot of chunk unnamed-chunk-1"> 
+--- .class #id </p>
+
+<h2>References</h2>
+
+<p>For more information about RStudio Shinyapps.io visit:
+<a href="http://shiny.rstudio.com/articles/shinyapps.html">http://shiny.rstudio.com/articles/shinyapps.html</a></p>
+
+<p>For more information about Kaggle Titanic challenge visit:
+<a href="https://www.kaggle.com/c/titanic-gettingStarted">https://www.kaggle.com/c/titanic-gettingStarted</a></p>
+
+<p>This app development was inspired by the tutorial at <a href="http://trevorstephens.com/post/72916401642/titanic-getting-started-with">http://trevorstephens.com/post/72916401642/titanic-getting-started-with</a>
+--- .class #id </p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='Agenda'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='About this app - Survival Predictor'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Usage'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Code for plots'>
+         4
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
